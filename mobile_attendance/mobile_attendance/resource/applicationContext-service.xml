@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+
+	<bean id="bioservice" class="com.biotech.impl.BiotechServiceImpl">
+		<property name="biotechdao" ref="biotechdao"/>
+	</bean>
+	<bean id="commentsservice" class="com.biotech.impl.CommentsServiceImpl">
+		<property name="commentsdao" ref="commentsdao"/>
+		<property name="userdao" ref="userdao"/>
+	</bean>
+	<bean id="userservice" class="com.biotech.impl.UserServiceImpl">
+		<property name="userdao" ref="userdao"/>
+	</bean>
+	<bean id="messageservice" class="com.biotech.impl.MessageServiceImpl">
+		<property name="messagedao" ref="messagedao"/>
+	</bean>
+	<bean id="courseservice" class="com.biotech.impl.CourseServiceImpl">
+		<property name="coursedao" ref="coursedao"/>
+	</bean>
+	<bean id="articleservice" class="com.biotech.impl.ArticleServiceImpl">
+		<property name="articledao" ref="articledao"/>
+	</bean>
+	<bean id="articlecommentsservice" class="com.biotech.impl.ArticleCommentsServiceImpl">
+		<property name="articlecommentsdao" ref="articlecommentsdao"/>
+	</bean>
+	<bean id="adminservice" class="com.biotech.impl.AdminServiceImpl">
+		<property name="admindao" ref="admindao"/>
+	</bean>
+
+</beans>

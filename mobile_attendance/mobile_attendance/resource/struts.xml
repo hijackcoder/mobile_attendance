@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.devMode" value="false" />
+	<package name="default" extends="struts-default,json-default"
+		namespace="/">
+		<global-results>
+			<result name="input">error.jsp</result>
+		</global-results>
+		<action name="message_save" class="messageaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="message_listjson" class="messageaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="article_save" class="articleaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="article_listjson" class="articleaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="article_list" class="articleaction" method="list">
+			<result name="success">
+				/admin/article/find.jsp
+            </result>
+		</action>
+		<action name="article_delete" class="articleaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">article_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="articlecomments_save" class="articlecommentsaction"
+			method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="articlecomments_listjson" class="articlecommentsaction"
+			method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+
+
+		<action name="course_add" class="courseaction" method="add">
+			<result name="success">
+				/admin/course/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="course_listloc" class="courseaction" method="listloc">
+			<result name="success">
+				/admin/article/loc.jsp
+            </result>
+		</action>
+		<action name="course_save" class="courseaction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">course_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="course_edit" class="courseaction" method="edit">
+			<result name="success">
+				/admin/course/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="course_delloc" class="courseaction" method="delloc">
+			<result name="success" type="redirectAction">
+				<param name="actionName">article_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="course_delete" class="courseaction" method="del">
+			<result name="success" type="redirectAction">
+				<param name="actionName">course_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="course_list" class="courseaction" method="list">
+			<result name="success">
+				/admin/course/find.jsp
+            </result>
+		</action>
+		<action name="course_listjson" class="courseaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="course_saveloc" class="courseaction" method="saveloc">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="course_listlocjson" class="courseaction" method="listlocjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+
+
+		<action name="biotech_add" class="biotechaction" method="add">
+			<result name="success">
+				/admin/biotech/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="biotech_edit" class="biotechaction" method="edit">
+			<result name="success">
+				/admin/biotech/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="biotech_save" class="biotechaction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_delete" class="biotechaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">biotech_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="biotech_list" class="biotechaction" method="list">
+			<result name="success">
+				/admin/biotech/find.jsp
+            </result>
+		</action>
+		<action name="biotech_listjson" class="biotechaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson0" class="biotechaction" method="listjson0">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson1" class="biotechaction" method="listjson1">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson2" class="biotechaction" method="listjson2">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson3" class="biotechaction" method="listjson3">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_listjson4" class="biotechaction" method="listjson4">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="biotech_detailjson" class="biotechaction" method="detailjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="login" class="loginaction" method="login">
+			<result name="success">
+				/index.jsp
+            </result>
+			<result name="login">
+				/login.jsp
+            </result>
+		</action>
+
+
+
+		<action name="user_login" class="useraction" method="login">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_loaddata" class="useraction" method="loaddata">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_save" class="commentsaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_listjson" class="commentsaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_list" class="commentsaction" method="list">
+			<result name="success">
+				/admin/comment/find.jsp
+            </result>
+		</action>
+		<action name="comments_delete" class="commentsaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">comments_list</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="user_list" class="useraction" method="list">
+			<result name="success">
+				/admin/User/find.jsp
+            </result>
+		</action>
+		<action name="user_add" class="useraction" method="add">
+			<result name="success">
+				/admin/User/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="user_edit" class="useraction" method="edit">
+			<result name="success">
+				/admin/User/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="user_del" class="useraction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list</param>
+			</result>
+		</action>
+		<action name="user_save" class="useraction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list</param>
+			</result>
+		</action>
+		<action name="member_listjson" class="useraction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_approve" class="useraction" method="approve">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list</param>
+			</result>
+		</action>
+		<action name="user_reg" class="useraction" method="reg">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+
+	</package>
+</struts>    
